@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <main className="flex flex-col items-center">
       <Menu />
-      <div className="container mx-lg px-20">
+      <div className="container px-20 lg:px-44">
         <Banner />
         <About />
         <Experience />

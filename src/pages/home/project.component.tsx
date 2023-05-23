@@ -1,38 +1,77 @@
+import TaxIcon from "@me/styles/img/projects/tax.png";
+import PeakviseIcon from "@me/styles/img/projects/peakvise.png";
+import UOBIcon from "@me/styles/img/projects/uob.png";
+import CTRWowIcon from "@me/styles/img/projects/ctr_wow.png.webp";
+import SitefluxIcon from "@me/styles/img/projects/siteflux.png";
+import NerlosIcon from "@me/styles/img/projects/nerlos.png";
+import InfinitikloudIcon from "@me/styles/img/projects/infinitikloud.webp";
+import ParsleyIcon from "@me/styles/img/projects/myp.webp";
+
+import Image from "next/image";
+
+const projects = [
+  {
+    src: TaxIcon,
+    title: "HCM Tax",
+    link: "https://hcmtax.gov.vn",
+  },
+  {
+    src: PeakviseIcon,
+    title: "Peakvise",
+    link: "https://peakvise.ch",
+  },
+  {
+    src: CTRWowIcon,
+    title: "CTRWow",
+    link: "https://www.ctrwow.com",
+  },
+  {
+    src: UOBIcon,
+    title: "UOB Bank",
+    link: "https://www.uobgroup.com/uobgroup/default.page",
+  },
+  {
+    src: SitefluxIcon,
+    title: "Siteflux",
+    link: "https://aiflux.ai/siteflux",
+  },
+  {
+    src: NerlosIcon,
+    title: "Nerlos",
+    link: "https://apps.apple.com/vn/app/nerlos/id1531683195",
+  },
+  {
+    src: InfinitikloudIcon,
+    title: "Infinitikloud",
+    link: "https://www.infinitikloud.com",
+  },
+  {
+    src: ParsleyIcon,
+    title: "Parsley Health",
+    link: "https://www.parsleyhealth.com",
+  },
+];
+
 export default function Project() {
   return (
-    <div id="project" className="mt-20 flex flex-col gap-3">
-      <span className="text-2xl font-bold">Project</span>
-      <p className="text-secondary">
-        In 2010, just a little guy takes on an adventure as
-        <span className="text-primary mx-1 font-medium">Java Developer</span>for
-        5 years where I fight lots of big features and challenges. It is also
-        fundamental to gain valuable knowledge and experience dramatically for
-        my future.
-      </p>
-
-      <p className="text-secondary">
-        After that, I've tried to work new positions such as
-        <span className="text-primary mx-1 font-medium">
-          Front-End | Back-End | Mobile Developer
-        </span>
-        which open my mind to have a big view of IT field and many amazing
-        things coming at me.
-      </p>
-
-      <p className="text-secondary">
-        My main focus these days is building web application with
-        <span className="text-primary mx-1 font-medium">React | Angular.</span>
-        Besides of that,
-        <span className="text-primary mx-1 font-medium">DevOps</span>is really
-        important at the moment that's why I wanted to take a step on learning
-        AWS Certified Solutions Architect.{" "}
-        <span className="text-gray-600 text-sm ml-1 italic">
-          (This page is hosted on AWS)
-        </span>
-      </p>
-      <p className="text-secondary">
-        <span className="text-primary font-bold">Fighting!!!</span>
-      </p>
+    <div id="projects" className="mt-20 flex flex-col gap-3">
+      <span className="text-2xl font-bold sticky top-0 md:relative mb-10">
+        Projects
+      </span>
+      <div className="grid grid-cols-4 gap-1">
+        {projects.map((p, i) => (
+          <a
+            key={i}
+            href={p.link}
+            target="_blank"
+            className="bg-gray-900 h-36 flex items-center justify-center hover:bg-slate-50  grayscale hover:grayscale-0"
+          >
+            <div className="w-40 h-16 relative">
+              <Image fill src={p.src} title={p.title} alt={p.title} />
+            </div>
+          </a>
+        ))}
+      </div>
     </div>
   );
 }

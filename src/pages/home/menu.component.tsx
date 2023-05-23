@@ -48,9 +48,9 @@ const useScrollspy = (ids: string[], offset: number = 0) => {
 };
 
 export default function Menu() {
-  const activeId = useScrollspy(["about", "experience", "projects"], 300);
+  const activeId = useScrollspy(["about", "experience", "projects"], 400);
   return (
-    <div className="sticky top-0 w-full flex flex-row items-center justify-end px-20 gap-6 h-14">
+    <div className="bg-gray-950 sticky top-0 w-full flex flex-row items-center justify-end px-20 gap-6 h-14 hidden md:flex">
       <a
         href="#about"
         className={

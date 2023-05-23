@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <div className="footer text-secondary h-32 flex justify-center items-center mt-20">
+    <div className="footer text-secondary h-44 mt-44 flex justify-center items-center mt-20">
       Built with
       <a
         href="https://nextjs.org/"

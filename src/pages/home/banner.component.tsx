@@ -11,7 +11,7 @@ function BannerInfo() {
         <span className="text-gray-600">Hi, I'm</span>
       </div>
       <span
-        className={`text-8xl font-black text-violet-600 ${styles["animate-character"]}`}
+        className={`text-6xl md:text-7xl lg:text-8xl font-black text-violet-600 ${styles["animate-character"]}`}
       >
         Nguyen
       </span>
@@ -27,7 +27,7 @@ function BannerInfo() {
 
 function BannerAvatar() {
   return (
-    <div className="flex-auto w-28 flex justify-center">
+    <div className="flex-auto w-auto md:w-28 flex justify-center">
       <Image
         src={Avatar}
         className="object-contain"
@@ -39,8 +39,10 @@ function BannerAvatar() {
 
 export default function Banner() {
   return (
-    <div className="flex min-h-screen mb-36 flex-col items-center justify-center">
-      <div className={`flex flex-row gap-6 w-full h-full ${styles.banner}`}>
+    <div className="flex min-h-screen mb-80 md:mb-40 flex-col items-center justify-center">
+      <div
+        className={`flex flex-col md:flex-row gap-6 w-full h-full ${styles.banner}`}
+      >
         <BannerInfo />
         <BannerAvatar />
       </div>
