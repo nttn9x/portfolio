@@ -1,0 +1,64 @@
+.position:before {
+    animation-duration: 10s;
+    animation-delay: 2s;
+    animation-iteration-count: infinite;
+    animation-name: positions;
+    content: "Software Developer";
+}
+
+.banner::after {
+    content: "";
+    transform-origin: bottom center;
+    width: 1px;
+    height: 30vh;
+    left: 50%;
+    bottom: -160px;
+    @apply absolute;
+    @apply bg-slate-400;
+}
+
+.animate-character {
+    text-transform: uppercase;
+    background-image: linear-gradient(-225deg,
+            #231557 0%,
+            #44107a 29%,
+            #ff1361 67%);
+    background-size: auto auto;
+    background-clip: border-box;
+    background-size: 200% auto;
+    color: #fff;
+    background-clip: text;
+    text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textclip 10s linear infinite;
+    display: inline-block;
+}
+
+@keyframes textclip {
+    to {
+        background-position: 200% center;
+    }
+}
+
+@keyframes positions {
+    0% {
+        content: "Software Developer";
+    }
+
+    25% {
+        content: "Front-End Developer";
+    }
+
+    50% {
+        content: "Back-End Developer";
+    }
+
+    75% {
+        content: "Mobile Developer";
+    }
+
+    100% {
+        content: "Software Developer";
+    }
+}
