@@ -30,7 +30,6 @@ function BannerAvatar() {
     <div className="flex-auto w-28 flex justify-center">
       <Image
         src={Avatar}
-        contain
         className="object-contain"
         alt="Picture of the author"
       />
