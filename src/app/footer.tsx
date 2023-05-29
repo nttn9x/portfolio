@@ -4,7 +4,7 @@ export default function Footer() {
       Built with
       <a
         href="https://nextjs.org/"
-        className="text-slate-300 mx-1"
+        className="text-primary mx-1"
         target="_blank"
       >
         Next.js
@@ -12,13 +12,13 @@ export default function Footer() {
       and
       <a
         href="https://tailwindcss.com/"
-        className="text-slate-300  mx-1"
+        className="text-primary  mx-1"
         target="_blank"
       >
         Tailwind CSS
       </a>
       , deployed with
-      <a href="https://aws.amazon.com/" className="text-slate-300  mx-1">
+      <a href="https://aws.amazon.com/" className="text-primary  mx-1">
         AWS
       </a>
     </div>

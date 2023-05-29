@@ -30,7 +30,6 @@ body {
 }
 
 body {
-  @apply bg-black;
-  @apply text-base;
+  @apply bg-stone-950;
   color: rgb(var(--foreground-rgb));
 }

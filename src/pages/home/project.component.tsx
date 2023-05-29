@@ -55,10 +55,11 @@ const projects = [
 export default function Project() {
   return (
     <div id="projects" className="mt-20 flex flex-col gap-3">
-      <span className="text-2xl font-bold sticky top-0 md:relative mb-10">
+      <span className="tracking-widest sticky top-0 md:relative bg-stone-950 text-secondary text-sm font-medium opacity-50">
         Projects
       </span>
-      <div className="grid grid-cols-4 gap-1">
+      Coming soon...
+      {/* <div className="grid grid-cols-4 gap-1">
         {projects.map((p, i) => (
           <a
             key={i}
@@ -71,7 +72,7 @@ export default function Project() {
             </div>
           </a>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 }

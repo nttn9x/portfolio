@@ -1,52 +1,69 @@
-import Avatar from "@me/styles/img/avatar.jpg";
+import styles from "./banner.module.scss";
+import clsx from "clsx";
+
+import BgImage from "@me/assets/bg.png";
 
 import Image from "next/image";
 
-import styles from "./banner.module.scss";
-
-function BannerInfo() {
+interface IBannerInfo {
+  mask?: boolean;
+}
+function BannerInfo({ mask }: IBannerInfo) {
   return (
-    <div className="flex-auto w-72 flex flex-col gap-3 justify-center">
-      <div className="text-6xl font-black">
-        <span className="text-gray-600">Hi, I'm</span>
+    <div className="flex-auto lg:w-64 xl:w-72 flex flex-col gap-3 justify-center content">
+      <div className="text-base">
+        <span className="text-secondary opacity-50">Hi, I'm </span>
+        <span className={`text-secondary`}>Nguyen</span>
       </div>
-      <span
-        className={`text-6xl md:text-7xl lg:text-8xl font-black text-violet-600 ${styles["animate-character"]}`}
-      >
-        Nguyen
-      </span>
-      <div
-        className={`text-xl font-medium text-primary ${styles.position}`}
-      ></div>
-      <div className="text-secondary">
-        I build web/mobile/desktop application
+
+      <div className="text-6xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-secondary">
+        {mask ? (
+          <>
+            BUILD<div className={"mx-1 text-black"}>SHIT</div>FOR YOU
+          </>
+        ) : (
+          <>
+            BUILD<div className={"mx-1 text-primary"}>WHATEVER</div>YOU WANT
+          </>
+        )}
       </div>
     </div>
   );
 }
 
-function BannerAvatar() {
+interface IBannerAvatar {
+  mask?: boolean;
+}
+
+function BannerAvatar({ mask }: IBannerAvatar) {
   return (
-    <div className="flex-auto w-auto md:w-28 flex justify-center">
-      <Image
-        src={Avatar}
-        className="object-contain"
-        alt="Picture of the author"
-      />
+    <div className="flex-auto w-auto md:w-28 flex justify-center relative">
+      {!mask && (
+        <Image fill src={BgImage} alt="BG" className="object-contain z-10" />
+      )}
     </div>
   );
 }
 
-export default function Banner() {
+interface IBanner {
+  mask?: boolean;
+}
+
+export default function Banner({ mask }: IBanner) {
   return (
-    <div className="flex min-h-screen mb-80 md:mb-40 flex-col items-center justify-center">
+    <div
+      id="about"
+      className={clsx(
+        "w-full px-20 lg:px-44 flex min-h-screen flex-col items-center justify-center",
+        { "bg-stone-900": !mask }
+      )}
+    >
       <div
         className={`flex flex-col md:flex-row gap-6 w-full h-full ${styles.banner}`}
       >
-        <BannerInfo />
-        <BannerAvatar />
+        <BannerInfo mask={mask} />
+        <BannerAvatar mask={mask} />
       </div>
-      <div className="flex mt-36 justify-center rotate-90">What I Do?</div>
     </div>
   );
 }

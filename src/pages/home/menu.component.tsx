@@ -1,5 +1,3 @@
-"use client";
-
 import { useLayoutEffect, useState } from "react";
 
 // Restrict value to be between the range [0, value]
@@ -50,13 +48,13 @@ const useScrollspy = (ids: string[], offset: number = 0) => {
 export default function Menu() {
   const activeId = useScrollspy(["about", "experience", "projects"], 400);
   return (
-    <div className="bg-black sticky top-0 w-full flex flex-row items-center justify-end px-20 gap-6 h-14 hidden md:flex">
+    <div className="z-50 fixed top-0 w-full flex flex-row items-center justify-end px-20 gap-6 h-14 hidden md:flex">
       <a
         href="#about"
         className={
           "about" === activeId || !activeId
-            ? "text-primary font-bold"
-            : "text-secondary"
+            ? "text-primary font-medium"
+            : "text-secondary  opacity-50"
         }
       >
         About
@@ -65,8 +63,8 @@ export default function Menu() {
         href="#experience"
         className={
           "experience" === activeId
-            ? "text-primary font-bold"
-            : "text-secondary"
+            ? "text-primary font-medium"
+            : "text-secondary  opacity-50"
         }
       >
         Experience
@@ -74,7 +72,9 @@ export default function Menu() {
       <a
         href="#projects"
         className={
-          "projects" === activeId ? "text-primary font-bold" : "text-secondary"
+          "projects" === activeId
+            ? "text-primary font-medium"
+            : "text-secondary opacity-50"
         }
       >
         Projects
