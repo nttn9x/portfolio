@@ -7,7 +7,7 @@ const clamp = (value: number) => Math.max(0, value);
 const isBetween = (value: number, floor: number, ceil: number) =>
   value >= floor && value <= ceil;
 
-const useScrollspy = (ids: string[], offset: number = 0) => {
+const useScrollSpy = (ids: string[], offset: number = 0) => {
   const [activeId, setActiveId] = useState<string>("");
 
   useLayoutEffect(() => {
@@ -46,7 +46,7 @@ const useScrollspy = (ids: string[], offset: number = 0) => {
 };
 
 export default function Menu() {
-  const activeId = useScrollspy(["about", "experience", "projects"], 400);
+  const activeId = useScrollSpy(["about", "experience", "projects"], 400);
   return (
     <div className="z-50 fixed top-0 w-full flex flex-row items-center justify-end px-20 gap-6 h-14 hidden md:flex">
       <a

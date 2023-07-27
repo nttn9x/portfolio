@@ -55,7 +55,7 @@ const projects = [
 export default function Project() {
   return (
     <div id="projects" className="mt-20 flex flex-col gap-3">
-      <span className="tracking-widest sticky top-0 md:relative bg-stone-950 text-secondary text-sm font-medium opacity-50">
+      <span className="tracking-widest sticky top-0 md:relative bg-stone-950 text-secondary text-xs font-light tracking-widest opacity-50">
         Projects
       </span>
       Coming soon...

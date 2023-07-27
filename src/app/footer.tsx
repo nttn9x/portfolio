@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <div className="footer text-secondary h-44 mt-44 flex justify-center items-center mt-20">
+    <footer className="footer text-secondary h-44 mt-44 flex justify-center items-center mt-20">
       Built with
       <a
         href="https://nextjs.org/"
@@ -21,6 +21,6 @@ export default function Footer() {
       <a href="https://aws.amazon.com/" className="text-primary  mx-1">
         AWS
       </a>
-    </div>
+    </footer>
   );
 }
